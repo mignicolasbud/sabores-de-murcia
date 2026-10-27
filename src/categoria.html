@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,8 +16,11 @@
     <header class="site-header">
         <div class="container header-content">
 
-            <a href="./index.html" class="logo">
-                Sabores de Murcia
+            <a class="logo" href="./index.html">
+                <img src="./img/favicon-lemon.png" alt="" class="logo-icon">
+                <span>
+                    <strong>Sabores</strong> de Murcia
+                </span>
             </a>
 
             <nav aria-label="Navegación principal">
@@ -24,11 +28,13 @@
                     <li>
                         <a href="./index.html">Inicio</a>
                     </li>
+
                     <li>
                         <a href="./categoria.html" aria-current="page">
                             Gastronomía
                         </a>
                     </li>
+
                     <li>
                         <a href="./links.html">
                             Enlaces
@@ -70,29 +76,46 @@
 
                     <article class="food-card">
 
-                        <img src="./img/pisto.jpg" alt="Zarangollo murciano" >
+                        <img
+                            src="./img/pisto.jpg"
+                            alt="Pisto Murciano tradicional"
+                        >
 
                         <div class="food-card-content">
 
-                            <h2>Pisto</h2>
+                            <div class="food-card-title">
+
+                                <h2>Pisto Murciano</h2>
+
+                                <button
+                                    class="curiosity-button"
+                                    type="button"
+                                    aria-label="Mostrar curiosidad sobre el Pisto Murciano"
+                                    aria-expanded="false"
+                                    title="Mostrar curiosidad">
+                                    i
+                                </button>
+
+                            </div>
 
                             <p>
                                 Elaboración tradicional basada en productos
                                 de la huerta murciana.
                             </p>
 
-                            <button class="button curiosity-button" type="button">
-                                Ver curiosidad
-                            </button>
-
                             <p class="curiosity" hidden>
-                                El Pisto Murciano está estrechamente relacionado con los productos
-                                de la huerta y forma parte de la cocina tradicional de la Región de Murcia.
+                                El Pisto Murciano está estrechamente relacionado
+                                con los productos de la huerta y forma parte de
+                                la cocina tradicional de la Región de Murcia.
                             </p>
 
-                            <a href="./det1.html" class="button">
-                                Descubrir el plato
-                            </a>
+                            <div class="card-actions">
+
+                                <a href="./det1.html" class="button">
+                                    Descubrir el plato
+                                </a>
+
+                            </div>
 
                         </div>
 
@@ -100,29 +123,47 @@
 
                     <article class="food-card">
 
-                        <img src="./img/paparajotes.jpg" alt="Caldero tradicional de la Región de Murcia">
+                        <img
+                            src="./img/paparajotes.jpg"
+                            alt="Paparajotes tradicionales murcianos"
+                        >
 
                         <div class="food-card-content">
 
-                            <h2>Paparajotes</h2>
+                            <div class="food-card-title">
+
+                                <h2>Paparajotes</h2>
+
+                                <button
+                                    class="curiosity-button"
+                                    type="button"
+                                    aria-label="Mostrar curiosidad sobre los Paparajotes"
+                                    aria-expanded="false"
+                                    title="Mostrar curiosidad">
+                                    i
+                                </button>
+
+                            </div>
 
                             <p>
-                                Uno de los platos tradicionales más
-                                representativos de la cocina murciana.
+                                Uno de los postres más tradicionales de
+                                la cocina murciana.
                             </p>
-
-                            <button class="button curiosity-button" type="button">
-                                Ver curiosidad
-                            </button>
 
                             <p class="curiosity" hidden>
-                                Los Paparajotes se elaboran con hojas de limonero, pero la hoja no se come.
-                                Es uno de los dulces más característicos de la gastronomía murciana.
+                                Los Paparajotes se elaboran con hojas de
+                                limonero, pero la hoja no se come. Es uno de
+                                los dulces más característicos de la
+                                gastronomía murciana.
                             </p>
 
-                            <a href="./det2.html" class="button">
-                                Descubrir el plato
-                            </a>
+                            <div class="card-actions">
+
+                                <a href="./det2.html" class="button">
+                                    Descubrir el plato
+                                </a>
+
+                            </div>
 
                         </div>
 
@@ -142,6 +183,10 @@
 
             <p>
                 &copy; 2026 Sabores de Murcia
+            </p>
+
+            <p>
+                Autor: Miguel Nicolás Budesca - UOC
             </p>
 
         </div>

@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <meta name="description" content="Sabores de Murcia, un recorrido por la gastronomía tradicional de la Región de Murcia.">
+
     <title>Sabores de Murcia - Gastronomía de la Región</title>
+
     <link rel="stylesheet" href="./scss/main.scss">
     <link rel="icon" type="image/png" href="./img/favicon-lemon.png">
 </head>
@@ -13,25 +17,56 @@
 
     <header class="site-header">
         <div class="container">
-            <a class="logo" href="./index.html">Sabores de Murcia</a>
+
+            <a class="logo" href="./index.html">
+                <img src="./img/favicon-lemon.png" alt="" class="logo-icon">
+                <span>
+                    <strong>Sabores</strong> de Murcia
+                </span>
+            </a>
 
             <nav aria-label="Navegación principal">
                 <ul>
-                    <li><a href="./index.html">Inicio</a></li>
-                    <li><a href="./categoria.html">Gastronomía</a></li>
-                    <li><a href="./links.html">Enlaces</a></li>
+                    <li>
+                        <a href="./index.html" aria-current="page">
+                            Inicio
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="./categoria.html">
+                            Gastronomía
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="./links.html">
+                            Enlaces
+                        </a>
+                    </li>
                 </ul>
             </nav>
+
         </div>
     </header>
 
     <main>
 
         <section class="hero">
-            <div class="container">
-                <p class="hero__intro">Gastronomía de la Región de Murcia</p>
 
-                <h1>Sabores de Murcia</h1>
+            <div class="hero__background" aria-hidden="true"></div>
+
+            <div class="hero__overlay" aria-hidden="true"></div>
+
+            <div class="container hero__content">
+
+                <p class="hero__intro">
+                    Gastronomía de la Región de Murcia
+                </p>
+
+                <h1>
+                    Sabores de Murcia
+                </h1>
 
                 <p class="hero__text">
                     Descubre algunos de los platos, productos y sabores
@@ -41,12 +76,18 @@
                 <a class="button" href="./categoria.html">
                     Descubrir la gastronomía
                 </a>
+
             </div>
+
         </section>
 
         <section class="intro">
+
             <div class="container">
-                <h2>Una gastronomía con identidad propia</h2>
+
+                <h2>
+                    Una gastronomía con identidad propia
+                </h2>
 
                 <p>
                     La gastronomía murciana está estrechamente vinculada a los
@@ -59,16 +100,31 @@
                     tradicionales de la Región de Murcia, acompañados de
                     información, imágenes y recursos audiovisuales.
                 </p>
+
             </div>
+
         </section>
 
     </main>
 
     <footer class="site-footer">
+
         <div class="container">
-            <p>&copy; 2026 Sabores de Murcia</p>
-            <a href="./links.html">Fuentes y enlaces</a>
+
+            <p>
+                &copy; 2026 Sabores de Murcia
+            </p>
+
+            <p>
+                Autor: Miguel Nicolás Budesca - UOC
+            </p>
+
+            <a href="./links.html">
+                Fuentes y enlaces
+            </a>
+
         </div>
+
     </footer>
 
     <script type="module" src="./js/main.js"></script>

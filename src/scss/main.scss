@@ -19,7 +19,10 @@ body {
     margin: 0 auto;
 }
 
-/* Header */
+
+/* ==============================================================================================================
+                                                    HEADER
+   ============================================================================================================== */
 
 .site-header {
     background: #31572c;
@@ -37,8 +40,22 @@ body {
 .logo {
     color: white;
     text-decoration: none;
-    font-size: 1.4rem;
-    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 1.1rem;
+}
+
+.logo strong {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.75rem;
+}
+
+.logo-icon {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+    display: block;
 }
 
 nav ul {
@@ -66,21 +83,40 @@ button:focus-visible {
     outline-offset: 3px;
 }
 
-/* Hero */
+
+/* =============================================================================================================
+                                                    HERO
+   ============================================================================================================== */
 
 .hero {
+    position: relative;
     min-height: 600px;
     display: flex;
     align-items: center;
     text-align: center;
-    background: linear-gradient(
-        135deg,
-        #f4d35e,
-        #ee964b
-    );
+    overflow: hidden;
+    isolation: isolate;
+
+    background-image:
+        linear-gradient(
+            rgba(244, 211, 94, 0.28),
+            rgba(238, 150, 75, 0.28)
+        ),
+        url("../img/limones-fondo.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-.hero .container {
+.hero__background,
+.hero__overlay {
+    display: none;
+}
+
+.hero__content {
+    position: relative;
+    z-index: 1;
     max-width: 800px;
 }
 
@@ -103,7 +139,10 @@ button:focus-visible {
     font-size: 1.2rem;
 }
 
-/* Botón */
+
+/* ==============================================================================================================
+                                                    BOTONES
+   ============================================================================================================== */
 
 .button {
     display: inline-block;
@@ -113,6 +152,8 @@ button:focus-visible {
     color: white;
     text-decoration: none;
     font-weight: bold;
+    border: 0;
+    cursor: pointer;
 }
 
 .button:hover,
@@ -120,7 +161,10 @@ button:focus-visible {
     background: #132a13;
 }
 
-/* Introducción */
+
+/* ==============================================================================================================
+                                                    INTRODUCCIÓN
+   ============================================================================================================== */
 
 .intro {
     padding: 5rem 0;
@@ -136,7 +180,10 @@ button:focus-visible {
     font-size: 2rem;
 }
 
-/* Footer */
+
+/* ==============================================================================================================
+                                                        FOOTER
+   ============================================================================================================== */
 
 .site-footer {
     padding: 2rem 0;
@@ -154,12 +201,17 @@ button:focus-visible {
     color: white;
 }
 
-/* Tarjetas de gastronomía */
+
+/* ==============================================================================================================
+                                                TARJETAS DE GASTRONOMÍA
+   ============================================================================================================== */
 
 .card-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2.5rem;
+    padding-bottom: 4rem;
+    align-items: start;
 }
 
 .food-card {
@@ -167,6 +219,9 @@ button:focus-visible {
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    min-height: 590px;
 }
 
 .food-card img {
@@ -178,20 +233,266 @@ button:focus-visible {
 
 .food-card-content {
     padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
-.food-card h2 {
-    margin-top: 0;
+.food-card-title {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
     margin-bottom: 0.75rem;
+}
+
+.food-card-title h2 {
+    margin: 0;
 }
 
 .food-card p {
     margin-bottom: 1.5rem;
 }
 
-/* Responsive */
+
+/* ==============================================================================================================
+                                                ICONO DE CURIOSIDAD
+   ============================================================================================================== */
+
+.curiosity-button {
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    border: 2px solid #31572c;
+    border-radius: 50%;
+    background: white;
+    color: #31572c;
+    font-size: 0.95rem;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.curiosity-button:hover,
+.curiosity-button:focus {
+    background: #31572c;
+    color: white;
+}
+
+.curiosity-button:hover {
+    transform: scale(1.08);
+}
+
+.curiosity-button.is-open {
+    background: #c62828;
+    border-color: #c62828;
+    color: white;
+    font-size: 1.3rem;
+    line-height: 1;
+}
+
+.curiosity-button.is-open:hover,
+.curiosity-button.is-open:focus {
+    background: #a61f1f;
+    border-color: #a61f1f;
+}
+
+.curiosity-button:focus-visible {
+    outline: 3px solid #f4d35e;
+    outline-offset: 3px;
+}
+
+
+/* ==============================================================================================================
+                                            TEXTO DE CURIOSIDAD
+   ============================================================================================================== */
+
+.curiosity {
+    margin-top: 0;
+    padding: 1rem;
+    background: #f7f5ef;
+    border-left: 4px solid #31572c;
+    border-radius: 6px;
+    font-size: 0.95rem;
+}
+
+
+/* ==============================================================================================================
+                                            BOTÓN DESCUBRIR
+   ============================================================================================================== */
+
+.card-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: auto;
+    padding-top: 1rem;
+}
+
+.card-actions .button {
+    width: 200px;
+    min-height: 46px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    margin: 0;
+}
+
+.card-actions .button:hover,
+.card-actions .button:focus {
+    transform: translateY(-2px);
+}
+
+
+/* ==============================================================================================================
+                                            PÁGINAS DE DETALLE
+   ============================================================================================================== */
+
+.detail {
+    padding: 4rem 0;
+}
+
+.detail .container {
+    max-width: 900px;
+}
+
+.detail h1 {
+    margin: 0 0 2rem;
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    line-height: 1.1;
+}
+
+
+/* - - - - - - Imagen principal - - - - - - */
+
+.detail > .container > img {
+    width: 100%;
+    max-width: 850px;
+    height: auto;
+
+    display: block;
+    margin: 0 auto 3rem;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+
+/* - - - - - - - Contenido - - - - - - - */
+
+.detail-content {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 12px;
+
+    box-shadow:
+        0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.detail-content h2 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.detail-content p {
+    margin-bottom: 1.5rem;
+}
+
+.detail-content ul {
+    padding-left: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.detail-content li {
+    margin-bottom: 0.5rem;
+}
+
+
+/* =============================================================================================
+                                        GALERÍA DE IMÁGENES
+   ============================================================================================= */
+
+.detail-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin: 2rem 0 3rem;
+}
+
+.detail-gallery figure {
+    margin: 0;
+    text-align: center;
+}
+
+.detail-gallery img {
+    width: 100%;
+    max-width: 650px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
+
+    display: block;
+    margin: 0 auto;
+}
+
+.detail-gallery figcaption {
+    margin-top: 0.75rem;
+    font-size: 0.9rem;
+    color: #5f6368;
+}
+
+
+/* =============================================================================================
+                                                VÍDEO
+   ============================================================================================= */
+
+.video {
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto 2.5rem;
+}
+
+.video iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto;
+
+    display: block;
+
+    border: 0;
+    border-radius: 10px;
+}
+
+
+/* =============================================================================================
+                                        RESPONSIVE - TABLE/MOVIL
+   ============================================================================================= */
 
 @media (max-width: 700px) {
+
+    .logo-icon {
+    width: 38px;
+    height: 38px;
+    }
+
+    /* - - - - - Header - - - - - - */
 
     .site-header .container {
         flex-direction: column;
@@ -204,6 +505,9 @@ button:focus-visible {
         justify-content: center;
     }
 
+
+    /* - - - - -  Hero - - - - - */
+
     .hero {
         min-height: 500px;
     }
@@ -212,23 +516,89 @@ button:focus-visible {
         font-size: 3.5rem;
     }
 
+    .hero__text {
+        font-size: 1rem;
+    }
+
+
+    /* - - - - - Footer - - - - - */
+
     .site-footer .container {
         flex-direction: column;
         text-align: center;
     }
-        .card-grid {
+
+
+    /* - - - - - Tarjetas - - - - - */
+
+    .card-grid {
         grid-template-columns: 1fr;
+    }
+
+    .food-card {
+        min-height: auto;
     }
 
     .food-card img {
         height: 240px;
     }
-}
 
-.food-card img {
-    width: 100%;
-    max-width: 700px;
-    height: auto;
-    display: block;
-    margin: 0 auto;
+
+    /* - - - - - - Icono de curiosidad - - - - - */
+
+    .curiosity-button {
+        width: 30px;
+        height: 30px;
+    }
+
+
+    /* - - - - - - Páginas de detalle - - - - - - */
+
+    .detail {
+        padding: 2.5rem 0;
+    }
+
+    .detail h1 {
+        font-size: 2.3rem;
+        margin-bottom: 1.5rem;
+    }
+
+
+    /* - - - - - - Imagen principal - - - - - - - */
+
+    .detail > .container > img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 2rem;
+        border-radius: 8px;
+    }
+
+
+    /* - - - - - - Contenido - - - - - - - */
+
+    .detail-content {
+        padding: 1.5rem;
+        border-radius: 8px;
+    }
+
+
+    /* - - - - - - Galería - - - - - - */
+
+    .detail-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .detail-gallery img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+
+    /* - - - - - Vídeo - - - - - - */
+
+    .video {
+        max-width: 100%;
+    }
+
 }
